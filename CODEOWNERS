@@ -1,0 +1,5 @@
+# Replace placeholders with approved GitHub teams before enabling required ownership reviews.
+# /backend/services/identity-service/ @<identity-team>
+# /backend/services/transfer-service/ @<payments-simulation-team>
+# /infra/ @<platform-team>
+# /docs/architecture/ @<architecture-owners>

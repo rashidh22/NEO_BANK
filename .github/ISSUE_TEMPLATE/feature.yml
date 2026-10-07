@@ -1,0 +1,25 @@
+name: Feature proposal
+description: Propose work linked to an approved NeoBank requirement
+body:
+  - type: input
+    id: requirement
+    attributes:
+      label: Requirement ID / decision
+      placeholder: BNK-FR-01 or ADR-NNNN
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: User outcome and acceptance criteria
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Product guardrails
+      options:
+        - label: Uses synthetic data and simulated money movement only
+          required: true
+        - label: Does not make AI an autonomous approver or transaction executor
+          required: true
