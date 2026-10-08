@@ -1,0 +1,12 @@
+rootProject.name = 'neobank'
+
+include(
+    'api-gateway',
+    'auth-service',
+    'account-service',
+    'beneficiary-service',
+    'transfer-service',
+    'loan-service',
+    'statement-service',
+    'notification-service'
+)

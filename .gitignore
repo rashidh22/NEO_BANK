@@ -1,26 +1,321 @@
-# IDE / OS
-.idea/
-.vscode/
+########################################
+# Combined .gitignore
+# Covers: OS, IDEs, Android/Gradle, C/C++, Assembly,
+# Java/Maven/Gradle/Spring, Python, SQL/DB, Node/JS/TS
+########################################
+
+# =========================================
+# Operating System
+# =========================================
 .DS_Store
 Thumbs.db
-*.swp
+desktop.ini
 
-# Secrets and local overrides
+# =========================================
+# IDE / Editors
+# =========================================
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.code-workspace
+.history/
+vcs.xml
+.settings/
+.classpath
+.project
+.factorypath
+.apt_generated
+.springBeans
+.sts4-cache
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+# DB IDEs
+.dbeaver/
+
+# =========================================
+# Secrets / Environment Variables
+# =========================================
 .env
-.env.*
-!.env.example
-**/application-local.yml
-**/application-local.yaml
+*.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+keystore.properties
+*.pgpass
+database.yml
+config/database.yml
+application-local.properties
+application-*.local.properties
+application-local.yml
+application-local.yaml
 
-# Build outputs
-target/
+# =========================================
+# Logs
+# =========================================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+hs_err_pid*
+replay_pid*
+liquibase.log
+
+# =========================================
+# Core dumps / crash files
+# =========================================
+core
+core.*
+*.hprof
+
+# =========================================
+# Generic build output directories
+# (kept broad; language-specific negations below restore what's needed)
+# =========================================
 build/
 dist/
-node_modules/
-coverage/
+out/
+bin/
+target/
 
-# Logs / runtime state
-*.log
-*.pid
+# ---- Maven/Gradle: keep source dirs that legitimately contain "target"/"build"/"bin" ----
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+!gradle/wrapper/gradle-wrapper.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# =========================================
+# Android / Gradle
+# =========================================
+.gradle/
+/local.properties
+local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/captures/
+captures/*.hprof
+captures/*.png
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.jks
+*.keystore
+/*/build/
+
+# Freeline
+freeline.py
+freeline/
+freeline_project_description.json
+
+# Lint
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/
+lint/reports/
+
+# =========================================
+# C / C++ / Assembly
+# =========================================
+# Object / compiled files
+*.o
+*.obj
+*.ko
+*.elf
+*.slo
+*.lo
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lai
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Executables / binaries
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.bin
+*.com
+*.ilk
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Listing / map files
+*.lst
+*.map
+
+# Build systems (CMake, Autotools, Conan/vcpkg)
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+_deps/
+Makefile
+!Makefile.am
+autom4te.cache/
+config.log
+config.status
+conaninfo.txt
+conanbuildinfo.*
+.conan/
+vcpkg_installed/
+
+# =========================================
+# Java / Maven / Gradle / Spring Boot
+# =========================================
+*.class
+*.jar
+*.war
+*.ear
+!.mvn/wrapper/maven-wrapper.jar
+
+# =========================================
+# Python
+# =========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+*.egg
+wheels/
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing / coverage
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Type checkers / linters
+.mypy_cache/
+.dmypy.json
+.pyre/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Poetry / PDM / Pipenv lock files
+# NOTE: most teams COMMIT these lock files for reproducible installs.
+# Uncomment only if you intentionally don't want to track them.
+# poetry.lock
+# Pipfile.lock
+
+# =========================================
+# SQL / Databases
+# =========================================
+# NOTE: Schema/migration .sql files are usually meant to be committed.
+# This ignores local DB *data* and dumps, not your migration scripts.
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.mdb
 *.dump
-.tmp/
+*.sql.gz
+*.bak
+backup/
+dumps/
+
+# Docker-based local DB data volumes
+pgdata/
+postgres-data/
+mysql-data/
+.docker/
+docker-compose.override.yml
+
+# Migration tool caches
+.flyway/
+
+# =========================================
+# Node / npm / yarn / pnpm / JS-TS frontend
+# =========================================
+node_modules/
+.pnpm-store/
+
+# Framework build outputs / caches
+.next/
+.nuxt/
+.svelte-kit/
+.vercel/
+.netlify/
+.cache/
+.parcel-cache/
+storybook-static/
+
+# Testing / coverage
+coverage/
+.nyc_output/
+
+# TypeScript
+*.tsbuildinfo
+
+# Source maps
+*.map
+
+# Package manager locks
+# NOTE: package-lock.json / yarn.lock / pnpm-lock.yaml are usually COMMITTED
+# for reproducible installs. Do not ignore unless you have a specific reason.
+
+# Temp / scratch
+tempCodeRunnerFile.js
+
+# =========================================
+# Assets / generated docs (project-specific — remove if you DO want these tracked)
+# =========================================
+# NOTE: These were in one of the source files; uncomment only if your
+# repo genuinely shouldn't track any images (rare for most projects).
+# *.png
+# *.jpg
+# *.jpeg
+# *.gif
+# *.svg
+# *.ico
+# HELP.md
