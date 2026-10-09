@@ -1,7 +1,6 @@
-package com.neobank.statement.dto;
+package com.neobank.gateway.mapper;
 
-
-import com.neobank.statement.mapper.ApiResponse;
+import com.neobank.gateway.dto.ApiResponse;
 import org.jspecify.annotations.Nullable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

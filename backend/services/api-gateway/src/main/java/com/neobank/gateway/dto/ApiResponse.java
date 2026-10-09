@@ -1,4 +1,4 @@
-package com.neobank.account.mapper;
+package com.neobank.gateway.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.jspecify.annotations.Nullable;

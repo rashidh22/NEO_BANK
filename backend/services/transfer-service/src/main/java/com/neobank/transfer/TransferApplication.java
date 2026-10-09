@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class TransferApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(TransferApplication.class, args);
+    public static void main (String[] args) {
+        SpringApplication.run (TransferApplication.class, args);
     }
 }

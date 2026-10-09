@@ -1,11 +1,13 @@
-package com.project.authservice.web;
-import com.project.authservice.dto.ApiResponse;
-import java.net.URI;
+package com.neobank.auth.mapper;
+
+import com.neobank.auth.dto.ApiResponse;
 import org.jspecify.annotations.Nullable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+
+import java.net.URI;
 
 /**
  * Single place where a {@link ResponseEntity} (status + headers + body) is assembled.
@@ -38,7 +40,7 @@ public final class Responses {
     }
 
     /** 201 with a {@code Location} header pointing at the newly created resource. */
-    public static <T> ResponseEntity<ApiResponse<T>> created(URI location, String message, T data) {
+    public static <T> ResponseEntity<ApiResponse <T>> created(URI location, String message, T data) {
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(location);
         return of(HttpStatus.CREATED, message, data, headers);

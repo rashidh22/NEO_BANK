@@ -1,9 +1,10 @@
-package com.project.authservice.dto;
+package com.neobank.auth.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import org.jspecify.annotations.Nullable;
+
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
-import org.jspecify.annotations.Nullable;
 
 /**
  * Success envelope for every JSON response this service sends.
@@ -18,10 +19,10 @@ import org.jspecify.annotations.Nullable;
  * @param data      payload; left out of the JSON when {@code null}
  * @param timestamp UTC instant the response was produced (ISO-8601 in JSON)
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
-public record ApiResponse<T>(int status, String message, @Nullable T data, Instant timestamp) {
+@JsonInclude (JsonInclude.Include.NON_NULL)
+public record ApiResponse <T>(int status, String message, @Nullable T data, Instant timestamp) {
 
-    public static <T> ApiResponse<T> of(int status, String message, @Nullable T data) {
-        return new ApiResponse<>(status, message, data, Instant.now().truncatedTo(ChronoUnit.MILLIS));
+    public static <T> ApiResponse <T> of (int status, String message, @Nullable T data) {
+        return new ApiResponse <> (status, message, data, Instant.now ().truncatedTo (ChronoUnit.MILLIS));
     }
 }

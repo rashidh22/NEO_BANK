@@ -1,12 +1,17 @@
 rootProject.name = 'neobank'
 
-include(
-    'api-gateway',
-    'auth-service',
-    'account-service',
-    'beneficiary-service',
-    'transfer-service',
-    'loan-service',
-    'statement-service',
-    'notification-service'
+include (
+  'api-gateway',
+  'auth-service',
+  'account-service',
+  'admin-service',
+  'customer-service',
+  'identity-service',
+  'risk-ai-service',
+  'schedule-service',
+  'beneficiary-service',
+  'transfer-service',
+  'loan-service',
+  'statement-service',
+  'notification-service'
 )
